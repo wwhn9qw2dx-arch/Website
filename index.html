@@ -1,0 +1,241 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Starter Site</title>
+    <meta name="description" content="A clean, responsive starter website." />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="header" id="top">
+      <div class="container header__inner">
+        <a class="brand" href="#top" aria-label="Homepage">
+          <span class="brand__mark" aria-hidden="true">◆</span>
+          <span class="brand__text">StarterSite</span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav">
+          <span class="nav-toggle__bar" aria-hidden="true"></span>
+          <span class="sr-only">Toggle navigation</span>
+        </button>
+
+        <nav class="nav" id="nav" aria-label="Primary">
+          <a class="nav__link" href="#features">Features</a>
+          <a class="nav__link" href="#pricing">Pricing</a>
+          <a class="nav__link" href="#faq">FAQ</a>
+          <a class="nav__link" href="#contact">Contact</a>
+          <a class="btn btn--small" href="#contact">Get Started</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero">
+        <div class="container hero__grid">
+          <div class="hero__copy">
+            <p class="badge">Fast • Responsive • Accessible</p>
+            <h1>Launch a clean website in minutes.</h1>
+            <p class="lead">
+              A modern, mobile-first landing page template you can customize for a business, portfolio, or product.
+            </p>
+            <div class="hero__cta">
+              <a class="btn" href="#pricing">See Plans</a>
+              <a class="btn btn--ghost" href="#features">Explore Features</a>
+            </div>
+            <div class="hero__meta">
+              <div class="stat">
+                <div class="stat__num">99%</div>
+                <div class="stat__label">Lighthouse-ready structure</div>
+              </div>
+              <div class="stat">
+                <div class="stat__num">&lt; 5</div>
+                <div class="stat__label">minutes to customize</div>
+              </div>
+              <div class="stat">
+                <div class="stat__num">0</div>
+                <div class="stat__label">dependencies</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero__card" role="presentation">
+            <div class="card">
+              <div class="card__top">
+                <div class="dot" aria-hidden="true"></div>
+                <div class="dot" aria-hidden="true"></div>
+                <div class="dot" aria-hidden="true"></div>
+              </div>
+              <div class="card__body">
+                <h2 class="card__title">Quick Setup</h2>
+                <ol class="steps">
+                  <li>Open <code>index.html</code></li>
+                  <li>Edit text + colors</li>
+                  <li>Deploy to GitHub Pages</li>
+                </ol>
+                <p class="muted">Includes form validation + smooth scroll + mobile nav.</p>
+                <a class="btn btn--small" href="#contact">Try the form</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="features">
+        <div class="container">
+          <div class="section__head">
+            <h2>Features</h2>
+            <p class="muted">Everything you need for a polished starter site.</p>
+          </div>
+
+          <div class="grid grid--3">
+            <article class="feature">
+              <h3>Responsive layout</h3>
+              <p>Looks great on phones, tablets, and desktop with a mobile-first design.</p>
+            </article>
+            <article class="feature">
+              <h3>Accessible by default</h3>
+              <p>Skip link, focus states, semantic sections, and ARIA where needed.</p>
+            </article>
+            <article class="feature">
+              <h3>Lightweight</h3>
+              <p>Pure HTML/CSS/JS. No frameworks. Easy to extend when you’re ready.</p>
+            </article>
+            <article class="feature">
+              <h3>Clean sections</h3>
+              <p>Hero, features, pricing, FAQ, and contact. Swap in your own content.</p>
+            </article>
+            <article class="feature">
+              <h3>Simple interactions</h3>
+              <p>Smooth scrolling and a mobile navigation menu with minimal code.</p>
+            </article>
+            <article class="feature">
+              <h3>Form validation</h3>
+              <p>Client-side validation and a success message (wire it to a backend later).</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--alt" id="pricing">
+        <div class="container">
+          <div class="section__head">
+            <h2>Pricing</h2>
+            <p class="muted">Example pricing cards—edit to match your offer.</p>
+          </div>
+
+          <div class="grid grid--3">
+            <article class="price">
+              <h3>Starter</h3>
+              <p class="price__num">$9<span class="price__unit">/mo</span></p>
+              <ul class="list">
+                <li>1 page site</li>
+                <li>Email support</li>
+                <li>Basic analytics</li>
+              </ul>
+              <a class="btn btn--ghost" href="#contact">Choose Starter</a>
+            </article>
+
+            <article class="price price--featured" aria-label="Most popular plan">
+              <div class="pill">Most Popular</div>
+              <h3>Pro</h3>
+              <p class="price__num">$19<span class="price__unit">/mo</span></p>
+              <ul class="list">
+                <li>Up to 5 pages</li>
+                <li>Priority support</li>
+                <li>Custom domain help</li>
+              </ul>
+              <a class="btn" href="#contact">Choose Pro</a>
+            </article>
+
+            <article class="price">
+              <h3>Team</h3>
+              <p class="price__num">$49<span class="price__unit">/mo</span></p>
+              <ul class="list">
+                <li>Unlimited pages</li>
+                <li>SLA support</li>
+                <li>Custom integrations</li>
+              </ul>
+              <a class="btn btn--ghost" href="#contact">Choose Team</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="faq">
+        <div class="container">
+          <div class="section__head">
+            <h2>FAQ</h2>
+            <p class="muted">Common questions—replace with your own.</p>
+          </div>
+
+          <div class="faq">
+            <details>
+              <summary>How do I customize this?</summary>
+              <p>Edit text in <code>index.html</code>, adjust colors and spacing in <code>styles.css</code>.</p>
+            </details>
+            <details>
+              <summary>Can I deploy for free?</summary>
+              <p>Yes—GitHub Pages, Netlify, and Vercel all support free static hosting.</p>
+            </details>
+            <details>
+              <summary>Does the contact form send emails?</summary>
+              <p>Not yet. It validates input and shows a success state. You can connect it to Formspree, Netlify Forms, or a backend.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--alt" id="contact">
+        <div class="container contact">
+          <div>
+            <h2>Contact</h2>
+            <p class="muted">Send a message. This demo simulates submission.</p>
+            <div class="callout">
+              <p><strong>Tip:</strong> Want this to be a portfolio, restaurant, SaaS, or event site? Tell me which and I’ll tailor sections + copy.</p>
+            </div>
+          </div>
+
+          <form class="form" id="contactForm" novalidate>
+            <label class="field">
+              <span>Name</span>
+              <input name="name" type="text" autocomplete="name" required minlength="2" />
+              <span class="field__error" data-error-for="name"></span>
+            </label>
+
+            <label class="field">
+              <span>Email</span>
+              <input name="email" type="email" autocomplete="email" required />
+              <span class="field__error" data-error-for="email"></span>
+            </label>
+
+            <label class="field">
+              <span>Message</span>
+              <textarea name="message" rows="5" required minlength="10"></textarea>
+              <span class="field__error" data-error-for="message"></span>
+            </label>
+
+            <button class="btn" type="submit">Send Message</button>
+            <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <p>© <span id="year"></span> StarterSite. All rights reserved.</p>
+        <div class="footer__links">
+          <a href="#top">Back to top</a>
+          <a href="#features">Features</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
