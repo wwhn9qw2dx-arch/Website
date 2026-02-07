@@ -1,0 +1,81 @@
+// script.js
+(() => {
+  const nav = document.getElementById("nav");
+  const toggle = document.querySelector(".nav-toggle");
+  const year = document.getElementById("year");
+  const form = document.getElementById("contactForm");
+  const statusEl = document.getElementById("formStatus");
+
+  year.textContent = String(new Date().getFullYear());
+
+  const setNavOpen = (open) => {
+    nav.classList.toggle("is-open", open);
+    toggle.setAttribute("aria-expanded", String(open));
+  };
+
+  toggle.addEventListener("click", () => {
+    const open = !nav.classList.contains("is-open");
+    setNavOpen(open);
+  });
+
+  document.addEventListener("click", (e) => {
+    const target = e.target;
+    if (!(target instanceof HTMLElement)) return;
+    if (nav.contains(target) || toggle.contains(target)) return;
+    setNavOpen(false);
+  });
+
+  nav.addEventListener("click", (e) => {
+    const a = e.target instanceof HTMLElement ? e.target.closest("a") : null;
+    if (a && a.getAttribute("href")?.startsWith("#")) setNavOpen(false);
+  });
+
+  const setFieldError = (name, message) => {
+    const el = document.querySelector(`[data-error-for="${name}"]`);
+    if (el) el.textContent = message ?? "";
+  };
+
+  const validate = (data) => {
+    const errors = {};
+    const name = (data.get("name") || "").toString().trim();
+    const email = (data.get("email") || "").toString().trim();
+    const message = (data.get("message") || "").toString().trim();
+
+    if (name.length < 2) errors.name = "Please enter your name.";
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errors.email = "Please enter a valid email.";
+    if (message.length < 10) errors.message = "Message should be at least 10 characters.";
+
+    return errors;
+  };
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    statusEl.textContent = "";
+
+    ["name", "email", "message"].forEach((k) => setFieldError(k, ""));
+
+    const data = new FormData(form);
+    const errors = validate(data);
+
+    if (Object.keys(errors).length > 0) {
+      Object.entries(errors).forEach(([k, v]) => setFieldError(k, v));
+      statusEl.textContent = "Please fix the highlighted fields.";
+      return;
+    }
+
+    const btn = form.querySelector('button[type="submit"]');
+    btn.disabled = true;
+    btn.textContent = "Sending...";
+
+    try {
+      await new Promise((r) => setTimeout(r, 600)); // simulate request
+      form.reset();
+      statusEl.textContent = "Thanks! Your message was sent (demo).";
+    } catch {
+      statusEl.textContent = "Something went wrong. Please try again.";
+    } finally {
+      btn.disabled = false;
+      btn.textContent = "Send Message";
+    }
+  });
+})();
